@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import "dotenv/config"
 
 const dbConnect = async()=>{
     try{
-        const instance = await mongoose.connect(`mongodb+srv://keshavsharma9472:ugSadwA333X4h6WB@cluster0.ntscly5.mongodb.net/AuthStore`);
+        const instance = await mongoose.connect(`${process.env.DATABASE_URL}/AuthStore`);
         console.log("Database Connected Successfully")
     }
     catch(error){
